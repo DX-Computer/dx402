@@ -1,1 +1,6 @@
-{}
+{
+  "common": {
+    "ready": "Listo",
+    "supermarket": "Supermercado"
+  }
+}

@@ -59,11 +59,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <ConnectKitProvider
-          customTheme={{
-            "--ck-font-family": '"Nerd Semi", cursive',
-          }}
-        >
+        <ConnectKitProvider>
           <ModalContext.Provider
             value={{
               showSuccess,
