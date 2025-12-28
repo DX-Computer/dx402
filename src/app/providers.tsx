@@ -36,6 +36,7 @@ export const config = createConfig(
   })
 );
 
+
 export default function Providers({ children }: { children: React.ReactNode }) {
   const [successData, setSuccessData] = useState<SuccessData | null>(null);
   const [errorData, setErrorData] = useState<ErrorData | null>(null);
