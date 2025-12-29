@@ -157,9 +157,9 @@ const ProductList: FunctionComponent = (): JSX.Element => {
               <p>Contrato: {SUPERMERCADO}</p>
               <p>Rede: Lens Network (Chain ID: 232)</p>
               <p className="mt-1">Funções disponíveis:</p>
-              <p>• createComment(productId, content)</p>
-              <p>• likeProduct(productId)</p>
-              <p>• dislikeProduct(productId)</p>
+              <p>• createComment(productId, content) - 0.002 tokens</p>
+              <p>• likeProduct(productId) - 0.001 tokens</p>
+              <p>• dislikeProduct(productId) - 0.001 tokens</p>
               <p className="mt-1 italic">Copie e cole para uma máquina</p>
             </div>
           </div>
