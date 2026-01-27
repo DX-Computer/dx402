@@ -1,7 +1,8 @@
 "use client";
-import { createContext, SetStateAction, useState } from "react";
+import { createContext, useState } from "react";
 import { WagmiProvider, createConfig, http } from "wagmi";
-import { ConnectKitProvider, getDefaultConfig } from "connectkit";
+import { ConnectKitProvider } from "connectkit";
+import { injected } from "wagmi/connectors";
 import { chains } from "@lens-chain/sdk/viem";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ErrorData, SuccessData } from "./components/Common/types/common.types";
@@ -21,19 +22,18 @@ export const ModalContext = createContext<
 >(undefined);
 
 export const config = createConfig(
-  getDefaultConfig({
-    appName: "W3F3",
-    walletConnectProjectId: process.env
-      .NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID as string,
-    appUrl: "https://dx402.computer",
-    appIcon: "https://dx402.computer/favicon.ico",
+  {
     chains: [chains.mainnet],
-    connectors: [],
     transports: {
-      [chains.mainnet.id]: http(),
+      [chains.mainnet.id]: http("https://rpc.lens.xyz"),
     },
+    connectors: [
+      injected({
+        target: "metaMask",
+      }),
+    ],
     ssr: true,
-  })
+  }
 );
 
 

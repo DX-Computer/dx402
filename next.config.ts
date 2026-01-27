@@ -2,6 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: false,
+  env: {
+    NEXT_TELEMETRY_DISABLED: "1",
+  },
   experimental: {
     scrollRestoration: true,
     optimizeCss: true,
